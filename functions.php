@@ -30,7 +30,7 @@ function load_editor_new_editor() {
     wp_editor($content, $full_id, array('textarea_rows' => 3));
 
     // create "add new" text
-    echo "<div class='add'><a onclick=\"load_new_editor('editor', $next);\" href='javascript:void(0);'>Click here</a> to add another editor</div>";
+    echo "<div id='add'><a onclick=\"load_new_editor('editor', $next);\" href='javascript:void(0);'>Click here</a> to add another editor</div>";
 
     die();
 }

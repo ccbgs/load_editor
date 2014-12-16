@@ -67,7 +67,7 @@ function load_new_editor(id, number){
 	        // this is needed for the editor to initiate
         	tinyMCE.execCommand('mceAddEditor', false, fullId);
         	
-        	//enable quic tags
+        	//enable quick tags
 	        if ( typeof(QTags) == 'function' ) {
                 	QTags( {'id': fullId } );
                 	QTags._buttonsInit();

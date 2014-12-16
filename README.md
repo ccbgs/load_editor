@@ -15,6 +15,6 @@ This is a simple plugin meant to do the following:
 
 This is meant to be an expample and not a finished product.
 
-It currently on loads one editor via ajax that works (although the tabs do not work).
+It currently on loads one editor via ajax that works.
 
 Anything added after the first editor doesn't work yet.

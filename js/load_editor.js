@@ -1,4 +1,3 @@
-// JavaScript Document
 
 function load_new_editor(id, number){
 	// remove click to add
@@ -72,16 +71,12 @@ function load_new_editor(id, number){
 		quicktags({id : fullId});
 	        if ( typeof(QTags) == 'function' ) {
                         var objQtSettings;
-                    
-                        if( typeof tinyMCEPreInit.qtInit[ fullId ] == 'undefined' ){
-                                objQtSettings = tinyMCEPreInit.qtInit[ fullId ] = jQuery.extend( {}, tinyMCEPreInit.qtInit[ getTemplateWidgetId( fullId ) ] );
-                                objQtSettings['id'] = fullId;
-                        }else{
-                                objQtSettings = tinyMCEPreInit.qtInit[ fullId ];
-                        }
-                    
-                        jq( '[id="wp-' + fullId + '-wrap"]' ).unbind( 'onmousedown' );
-                        jq( '[id="wp-' + fullId + '-wrap"]' ).bind( 'onmousedown', function(){
+                        
+                        objQtSettings = tinyMCEPreInit.qtInit[ fullId ] = jQuery.extend( {}, tinyMCEPreInit.qtInit[ fullId ] );
+                        objQtSettings['id'] = fullId;
+                        
+                        jQuery( '[id="wp-' + fullId + '-wrap"]' ).unbind( 'onmousedown' );
+                        jQuery( '[id="wp-' + fullId + '-wrap"]' ).bind( 'onmousedown', function(){
                                 wpActiveEditor = fullId;
                         });
                     

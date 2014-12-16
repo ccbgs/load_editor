@@ -67,23 +67,12 @@ function load_new_editor(id, number){
 	        // this is needed for the editor to initiate
         	tinyMCE.execCommand('mceAddEditor', false, fullId);
         	
-        	// this is need for the tabs to work
-		quicktags({id : fullId});
+        	//enable quic tags
 	        if ( typeof(QTags) == 'function' ) {
-                        var objQtSettings;
-                        
-                        objQtSettings = tinyMCEPreInit.qtInit[ fullId ] = jQuery.extend( {}, tinyMCEPreInit.qtInit[ fullId ] );
-                        objQtSettings['id'] = fullId;
-                        
-                        jQuery( '[id="wp-' + fullId + '-wrap"]' ).unbind( 'onmousedown' );
-                        jQuery( '[id="wp-' + fullId + '-wrap"]' ).bind( 'onmousedown', function(){
-                                wpActiveEditor = fullId;
-                        });
-                    
-                        QTags( objQtSettings );
-                        QTags._buttonsInit();
-                    
-                        switchEditors.switchto( jQuery( '#wp-' + fullId + '-wrap' ).find( '.wp-switch-editor.switch-' + ( getUserSetting( 'editor' ) == 'html' ? 'html' : 'tmce' ) )[0] );
+                	QTags( {'id': fullId } );
+                	QTags._buttonsInit();
+                    	//remember last tab selected
+                    	switchEditors.switchto( jQuery( '#wp-' + fullId + '-wrap' ).find( '.wp-switch-editor.switch-' + ( getUserSetting( 'editor' ) == 'html' ? 'html' : 'tmce' ) )[0] );
                 }   
 	});
 }
